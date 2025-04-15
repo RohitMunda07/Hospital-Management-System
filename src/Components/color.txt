@@ -1,0 +1,18 @@
+Primary Colors (Trust & Professionalism)
+Navy Blue #003366 – for headers, navigation bar, or important buttons
+
+Sky Blue #4DA8DA – for highlights or action elements like login or submit
+
+Secondary Colors (Clean & Minimal)
+White #FFFFFF – background color to keep it clean and readable
+
+Light Gray #F5F5F5 – for section backgrounds or card UI elements
+
+Medium Gray #B0BEC5 – for borders, placeholders, or labels
+
+Accent Colors (Alerts/Remarks)
+Green #4CAF50 – for success, e.g., “Paid” remarks
+
+Red #E53935 – for errors or important alerts
+
+Orange/Amber #FFC107 – for pending/attention status
