@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import Footer from './Components/Footer'
 import './App.css'
 import { Input } from './Components'
@@ -9,10 +9,10 @@ import Home from './Pages/Home'
 function App() {
 
   return (
-    <div>
+    <div className='min-h-screen flex flex-col'>
       <Header />
-      <main>
-        <Home />
+      <main className='flex-grow'>
+        <Outlet/>
       </main>
       <Footer />
     </div>

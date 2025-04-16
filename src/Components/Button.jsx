@@ -14,6 +14,7 @@ function Button({
             className={`${bgColor} ${textColor} ${className}`}
             {...props}>
             {children}
+            
         </button>
     )
 }

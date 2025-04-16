@@ -17,7 +17,7 @@ function Footer() {
     ];
 
     return (
-        <footer className="bg-[#003366] text-white py-10 px-5 w-full">
+        <footer className="bg-[#003366] text-white py-10 px-5 w-full mt-16">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                 {footerItems.map((item, index) => (
                     <div key={index}>

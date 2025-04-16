@@ -3,7 +3,7 @@ import Container from './Container'
 
 function IdCard({ data }) {
     return (
-        <div className='max-w-2xl mx-auto mt-20'>
+        <div className='max-w-2xl mx-auto pt-10'>
             <div className='bg-[#F5F5F5] text-black text-start py-7 text-4xl rounded-4xl'>
                 <h2 className='text-5xl text-center font-semibold'>Medical Card</h2>
                 <div className='flex flex-col justify-evenly items-center'>

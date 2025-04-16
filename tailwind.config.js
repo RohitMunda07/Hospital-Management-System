@@ -1,14 +1,11 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    theme: {
-      extend: {
-        fontFamily: {
-          inter: ['Inter', 'sans-serif'],
-          roboto: ['Roboto', 'sans-serif'],
-          poppins: ['Poppins', 'sans-serif'],
-          nunito: ['Nunito', 'sans-serif'],
-        },
-      },
-    },
-  };
-  
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
