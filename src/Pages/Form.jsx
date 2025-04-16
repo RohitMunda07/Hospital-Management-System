@@ -2,7 +2,7 @@ import React from 'react'
 import { Input, Button } from '../Components/index'
 import { useForm } from 'react-hook-form'
 import Upload from '../Components/Upload';
-import { useSelectorgit } from 'react-redux';
+import { useSelector } from 'react-redux'
 
 function Form() {
     const { register, handleSubmit } = useForm();
