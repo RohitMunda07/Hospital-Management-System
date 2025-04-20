@@ -62,9 +62,10 @@ function Header() {
                             ))
                         }
 
-<LogoutBtn />
+
                         {authStatus && (
                             <li>
+                                <LogoutBtn />
                             </li>
                         )}
                     </ul>

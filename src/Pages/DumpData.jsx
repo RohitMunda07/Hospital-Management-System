@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import FileUploadDropzone from '../Components/FileUploadDropzone';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { Button } from '../Components/index';
+import { useNavigate } from 'react-router-dom';
 
 const DumpData = () => {
     const [uploadedFile, setUploadedFile] = useState(null);
-
+    const navigate = useNavigate();
     const handleFileAccepted = (file) => {
         setUploadedFile(file);
 
