@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { Home, Form, Transaction } from './Components/index.js'
 import store from './store/store.js'
-import Login from './Pages/Login.jsx'
+import {Login, AddEmp, UpdateDetails, DumpData, Admin} from './Components/index.js'
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,23 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />
-      }
+      },
+      {
+        path: "/admin",
+        element: <Admin />
+      },
+      {
+        path: '/addEmp',
+        element: <AddEmp />
+      },
+      {
+        path: '/updEmp',
+        element: <UpdateDetails />
+      },
+      {
+        path: '/dump',
+        element: <DumpData />
+      }      
     ]
   }
 ])

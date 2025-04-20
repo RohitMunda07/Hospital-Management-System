@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Table = () => {
+const Table = ({className="min-w-full"}) => {
   const data = [
     {
       claimed: '₹1,000',
@@ -20,7 +20,7 @@ const Table = () => {
 
   return (
     <div className="overflow-x-auto mt-10">
-      <table className="min-w-full bg-white text-black border border-gray-300 rounded-lg shadow-md">
+      <table className={`${className} bg-white text-black border border-gray-300 rounded-lg shadow-md`}>
         <thead className="bg-amber-600 text-white text-lg">
           <tr>
             <th className="py-3 px-4 text-left border-r">Claimed Amount</th>

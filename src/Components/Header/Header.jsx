@@ -53,6 +53,7 @@ function Header() {
                                     <li key={item.name}>
                                         <button
                                             onClick={() => navigate(item.path)}
+                                            className='rounded-full'
                                         >
                                             {item.name}
                                         </button>
@@ -61,9 +62,9 @@ function Header() {
                             ))
                         }
 
+<LogoutBtn />
                         {authStatus && (
                             <li>
-                                <LogoutBtn />
                             </li>
                         )}
                     </ul>

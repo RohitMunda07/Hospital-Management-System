@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { login as authLogin } from '../store/authSlice'
+import { login as authLogin, adminLogin } from '../store/authSlice'
 import { useNavigate, Link } from 'react-router-dom'
 import authService from '../Appwrite/auth'
 import { useDispatch } from 'react-redux'
@@ -19,7 +19,14 @@ function Login() {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser();
-                if (userData) {
+                if (userData.$id === '68046d7600170c4dd1be') {
+                    dispatch(adminLogin(userData))
+                    console.log(userData);
+                    console.log("Login Success as Admin");
+                    navigate("/admin")
+                }
+
+                else if (userData) {
                     dispatch(authLogin(userData))
                     console.log(userData);
                     console.log("Login Success as User");
