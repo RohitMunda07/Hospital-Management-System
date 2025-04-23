@@ -9,82 +9,83 @@ import LogoutBtn from './LogoutBtn';
 function Header() {
     const navigate = useNavigate();
     const authStatus = useSelector((state) => state.auth.status);
+    const admin = useSelector((state) => state.auth.admin); // ✅ get admin
+    const isLoggedIn = authStatus || admin; // ✅ universal check
+
     const navItems = [
         {
             name: "Home",
             path: "/",
-            active: authStatus,
+            active: isLoggedIn,
         },
         {
             name: "Transaction",
             path: "/log",
-            active: authStatus,
+            active: isLoggedIn,
         },
         {
             name: "Claim Request",
             path: "/form",
-            active: authStatus,
+            active: isLoggedIn,
         },
         {
             name: "Login",
             path: "/login",
-            active: !authStatus, // it means if not login then show login tab
+            active: !isLoggedIn,
         },
         {
             name: "Support",
             path: "/support",
-            active: authStatus
+            active: isLoggedIn
         }
+    ];
 
-    ]
     return (
-        <header className='bg-[#003366]' style={{ width: "full" }}>
+        <header className='bg-[#003366]'>
             <Container>
                 <nav className='flex justify-around items-center max-w-7xl mx-auto'>
+                    {/* Logo */}
                     <div>
-                        <Button
-                            onClick={() => navigate('/')}
-                            style={{ border: "0" }}
-                        >
+                        <Button onClick={() => navigate('/')} style={{ border: "0" }}>
                             <Logo />
                         </Button>
-
                     </div>
-                    <ul className='flex gap-x-2 text-xl items-center'>
-                        {console.log("Current AuthStatus: ", authStatus)}
+
+                    {/* Nav items */}
+                    <ul className='flex gap-x-4 text-xl items-center text-white'>
                         {
                             navItems.map(item => (
-                                (item.active ? (
+                                item.active && (
                                     <li key={item.name}>
                                         <button
                                             onClick={() => navigate(item.path)}
-                                            className='rounded-full'
+                                            className='hover:underline'
                                         >
                                             {item.name}
                                         </button>
                                     </li>
-                                ) : null)
+                                )
                             ))
                         }
 
-
-<LogoutBtn />
-                        {authStatus && (
+                        {/* ✅ Show Logout if user or admin is logged in */}
+                        {isLoggedIn && (
                             <li>
+                                <LogoutBtn />
                             </li>
                         )}
                     </ul>
+
+                    {/* User Avatar */}
                     <div>
-                        <div className='rounded-full '>
-                            <button className='rounded-full p-1 flex justify-center items-center' style={{ borderRadius: "55%", background: "#F5F5F5", width: "3rem", height: "3rem" }}>
-                                <PersonIcon className='text-blue-600 text-xl' />
-                            </button>
-                        </div>
+                        <button className='rounded-full p-1 bg-white flex justify-center items-center' style={{ width: "3rem", height: "3rem" }}>
+                            <PersonIcon className='text-blue-600 text-xl' />
+                        </button>
                     </div>
                 </nav>
             </Container>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
