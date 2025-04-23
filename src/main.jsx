@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { Home, Form, Transaction } from './Components/index.js'
 import store from './store/store.js'
 import {Login, AddEmp, UpdateDetails, DumpData, Admin} from './Components/index.js'
+import Support from './Pages/Support.jsx'
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: '/dump',
         element: <DumpData />
+      },
+      {
+        path: '/support',
+        element: <Support />
       }      
     ]
   }

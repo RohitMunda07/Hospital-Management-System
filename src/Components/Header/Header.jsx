@@ -30,6 +30,11 @@ function Header() {
             path: "/login",
             active: !authStatus, // it means if not login then show login tab
         },
+        {
+            name: "Support",
+            path: "/support",
+            active: authStatus
+        }
 
     ]
     return (
