@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from 'react-redux';
+
 
 const CheckoutStepper = ({ stepsConfig = [] }) => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const stepIndex = useSelector((state) => state.auth.stepIndex);
+  const [currentStep, setCurrentStep] = useState(stepIndex);
   const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    setCurrentStep(stepIndex);
+  }, [stepIndex]);
+
 
   if (!stepsConfig.length) return null;
 
@@ -45,11 +53,11 @@ const CheckoutStepper = ({ stepsConfig = [] }) => {
         <ActiveComponent />
       </div>
 
-      {!isComplete && (
+      {/* {!isComplete && (
         <button className="btn" onClick={handleNext}>
           {currentStep === stepsConfig.length ? "Finish" : "Next"}
         </button>
-      )}
+      )} */}
     </>
   );
 };

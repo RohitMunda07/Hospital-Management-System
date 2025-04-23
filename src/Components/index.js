@@ -10,8 +10,9 @@ import AddEmp from "../Pages/AddEmp";
 import UpdateDetails from "../Pages/UpdateDetails";
 import DumpData from "../Pages/DumpData";
 import Admin from "../Pages/Admin";
-
-export{
+import {createClaimDocument} from '../Appwrite/createDocument';
+import {uploadReceipt} from '../Appwrite/uploadRecipt'
+export {
     Input,
     Logo,
     Button,
@@ -24,5 +25,7 @@ export{
     UpdateDetails,
     DumpData,
     Admin,
-    
+    createClaimDocument,
+    uploadReceipt
+
 }

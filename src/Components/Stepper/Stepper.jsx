@@ -10,24 +10,16 @@ const CHECKOUT_STEPS = [
     Component: () => <div>Step 2 Content</div>,
   },
   {
-    name: "Sent to Hospital",
+    name: "Sent to HR",
     Component: () => <div>Step 3 Content</div>,
   },
   {
-    name: "Approved by Hospital",
+    name: "Approved by HR",
     Component: () => <div>Step 4 Content</div>,
   },
   {
-    name: "Sent to Insurance",
-    Component: () => <div>Step 5 Content</div>,
-  },
-  {
-    name: "Insurance Approved",
-    Component: () => <div>Step 6 Content</div>,
-  },
-  {
     name: "Amount Disbursed",
-    Component: () => <div>Step 7 Content</div>,
+    Component: () => <div>Step 5 Content</div>,
   },
 ];
 

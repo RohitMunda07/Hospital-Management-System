@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     status: false,
     admin: false,
-    userData: null
+    userData: null,
+    claim: false,
+    stepIndex: 1, // 👈 Add this to track the current step
 };
 
 export const authSlice = createSlice({
@@ -24,9 +26,16 @@ export const authSlice = createSlice({
             state.status = false;
             state.admin = false;
             state.userData = null;
-        }
-    }
+            state.stepIndex = 1;
+        },
+        setClaim: (state, action) => {
+            state.claim = action.payload;
+        },
+        setStepIndex: (state, action) => {
+            state.stepIndex = action.payload;
+        }, // 👈 Add this reducer
+    },
 });
 
-export const { login, logout, adminLogin } = authSlice.actions;
+export const { login, logout, adminLogin, setClaim, setStepIndex } = authSlice.actions;
 export default authSlice.reducer;
