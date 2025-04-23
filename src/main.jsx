@@ -9,6 +9,7 @@ import { Home, Form, Transaction } from './Components/index.js'
 import store from './store/store.js'
 import {Login, AddEmp, UpdateDetails, DumpData, Admin} from './Components/index.js'
 import Support from './Pages/Support.jsx'
+import HowItWorks from './Pages/HowItWorks.jsx'
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,11 @@ const router = createBrowserRouter([
       {
         path: '/support',
         element: <Support />
-      }      
+      },
+      {
+        path: '/howItWork',
+        element: <HowItWorks />
+      }   
     ]
   }
 ])
